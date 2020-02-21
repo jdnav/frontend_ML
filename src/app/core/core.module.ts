@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { PagesModule } from '../pages/pages.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PagesModule } from '../pages/pages.module';
     MatIconModule,
     MatListModule,
     PagesModule,
+    RouterModule,
   ],
   exports: [
     MainNavComponent
