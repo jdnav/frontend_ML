@@ -1,1 +1,20 @@
-<p>credit-card works!</p>
+<h1>Credit card form</h1>
+<form [formGroup]="creditCardForm">
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>First name</mat-label>
+          <input matInput formControlName="firstName">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Long Last Name That Will Be Truncated</mat-label>
+          <input matInput formControlName="lastName">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+</form>
