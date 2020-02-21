@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { PagesModule } from '../pages/pages.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MainNavComponent } from './main-nav/main-nav.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    PagesModule,
   ],
   exports: [
     MainNavComponent
