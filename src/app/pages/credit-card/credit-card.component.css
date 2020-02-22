@@ -11,3 +11,16 @@
 td {
   padding-right: 8px;
 }
+
+.example-card {
+  max-width: 100%;
+}
+
+.example-header-image {
+  background-image: url('src\assets\img\credit-cards.jpg');
+  background-size: cover;
+}
+
+mat-form-field {
+  margin-right: 12px;
+}

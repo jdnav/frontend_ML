@@ -1,20 +1,73 @@
-<h1>Credit card form</h1>
-<form [formGroup]="creditCardForm">
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Credit card approval prediction</mat-card-title>
+    <mat-card-subtitle>Fill out the form below</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
 
-  <table class="example-full-width" cellspacing="0">
-    <tr>
-      <td>
-        <mat-form-field class="example-full-width">
-          <mat-label>First name</mat-label>
-          <input matInput formControlName="firstName">
-        </mat-form-field>
-      </td>
-      <td>
-        <mat-form-field class="example-full-width">
-          <mat-label>Long Last Name That Will Be Truncated</mat-label>
-          <input matInput formControlName="lastName">
-        </mat-form-field>
-      </td>
-    </tr>
-  </table>
-</form>
+    <P>Here we could explain how the algorithm works...</P>
+
+    <form [formGroup]="creditCardForm">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Type of education</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let education of educationTypes" [value]="education.value">
+            {{education.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Type of income</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let income of incomeTypes" [value]="income.value">
+            {{income.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Gender</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let gender of genderTypes" [value]="gender.value">
+            {{gender.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Family type</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let familyStatus of familyStatusTypes" [value]="familyStatus.value">
+            {{familyStatus.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>House type</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let house of houseTypes" [value]="house.value">
+            {{house.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Submit</button>
+  </mat-card-actions>
+</mat-card>
