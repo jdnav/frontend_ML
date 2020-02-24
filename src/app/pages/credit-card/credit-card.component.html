@@ -10,16 +10,25 @@
 
     <form [formGroup]="creditCardForm">
 
-      <mat-form-field class="example-full-width">
-        <mat-label>First Name</mat-label>
-        <input matInput formControlName="firstName">
+      <section class="radio-section">
+        <label class="radio-margin">Gender:</label>
+        <mat-radio-group>
+          <mat-radio-button class="radio-margin" value="male">Male</mat-radio-button>
+          <mat-radio-button class="radio-margin" value="female">Female</mat-radio-button>
+        </mat-radio-group>
+      </section>
+
+      <!-- STATUS -->
+      <mat-form-field>
+        <mat-label>Finantial status</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let status of finantialStatus" [value]="status.value">
+            {{status.viewValue}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
 
-      <mat-form-field class="example-full-width">
-        <mat-label>Last Name</mat-label>
-        <input matInput formControlName="lastName">
-      </mat-form-field>
-
+      <!-- NAME_EDUCATION_TYPE -->
       <mat-form-field>
         <mat-label>Type of education</mat-label>
         <mat-select>
@@ -29,6 +38,7 @@
         </mat-select>
       </mat-form-field>
 
+      <!-- NAME_INCOME_TYPE -->
       <mat-form-field>
         <mat-label>Type of income</mat-label>
         <mat-select>
@@ -38,6 +48,7 @@
         </mat-select>
       </mat-form-field>
 
+      <!-- CODE_GENDER -->
       <mat-form-field>
         <mat-label>Gender</mat-label>
         <mat-select>
@@ -47,6 +58,7 @@
         </mat-select>
       </mat-form-field>
 
+      <!-- CODE_GENDER -->
       <mat-form-field>
         <mat-label>Family type</mat-label>
         <mat-select>
@@ -56,6 +68,7 @@
         </mat-select>
       </mat-form-field>
 
+      <!-- NAME_HOUSING_TYPE -->
       <mat-form-field>
         <mat-label>House type</mat-label>
         <mat-select>
@@ -63,6 +76,46 @@
             {{house.viewValue}}
           </mat-option>
         </mat-select>
+      </mat-form-field>
+
+      <section class="radio-section">
+        <label class="radio-margin">Own car:</label>
+        <mat-radio-group>
+          <mat-radio-button class="radio-margin" value="male">Yes</mat-radio-button>
+          <mat-radio-button class="radio-margin" value="female">No</mat-radio-button>
+        </mat-radio-group>
+      </section>
+
+      <section class="radio-section">
+        <label class="radio-margin">Own mobile phone:</label>
+        <mat-radio-group>
+          <mat-radio-button class="radio-margin" value="male">Yes</mat-radio-button>
+          <mat-radio-button class="radio-margin" value="female">No</mat-radio-button>
+        </mat-radio-group>
+      </section>
+
+      <section class="radio-section">
+        <label class="radio-margin">Work phone:</label>
+        <mat-radio-group>
+          <mat-radio-button class="radio-margin" value="male">Yes</mat-radio-button>
+          <mat-radio-button class="radio-margin" value="female">No</mat-radio-button>
+        </mat-radio-group>
+      </section>
+
+      <section class="radio-section">
+        <label class="radio-margin">Landline phone:</label>
+        <mat-radio-group>
+          <mat-radio-button class="radio-margin" value="male">Yes</mat-radio-button>
+          <mat-radio-button class="radio-margin" value="female">No</mat-radio-button>
+        </mat-radio-group>
+      </section>
+
+      <!-- AMT_INCOME_TOTAL -->
+      <mat-form-field class="example-form-field">
+        <mat-label>Total amount Income</mat-label>
+        <input matInput type="number">
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
       </mat-form-field>
 
     </form>

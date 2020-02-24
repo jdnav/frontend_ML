@@ -24,3 +24,14 @@ td {
 mat-form-field {
   margin-right: 12px;
 }
+
+.radio-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.radio-margin {
+  margin: 0 10px;
+}
