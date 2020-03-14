@@ -8,6 +8,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MatRadioModule } from '@angular/material/radio';
     MatSelectModule,
     MatCardModule,
     MatButtonModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDatepickerModule
   ],
   exports: [ContactComponent, CreditCardComponent]
 })

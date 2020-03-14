@@ -14,25 +14,41 @@ interface SelectOption {
 export class CreditCardComponent implements OnInit {
 
   creditCardForm = new FormGroup({
-    STATUS: new FormControl(), // Finantial status
-    NAME_EDUCATION_TYPE: new FormControl(),
-    NAME_INCOME_TYPE: new FormControl(),
-    CODE_GENDER: new FormControl(),
-    NAME_FAMILY_STATUS: new FormControl(),
-    NAME_HOUSING_TYPE: new FormControl(),
-    CNT_CHILDREN: new FormControl(),
-    FLAG_OWN_CAR: new FormControl(),
-    FLAG_MOBIL: new FormControl(), // Mobile phone
+    CODE_GENDER: new FormControl(), // Gender
+    FLAG_OWN_CAR: new FormControl(), // Is there a car
+    FLAG_OWN_REALTY: new FormControl(), // Is there a property
+    CNT_CHILDREN: new FormControl(), // Number of children
+    AMT_INCOME_TOTAL: new FormControl(), // Annual income
+    NAME_INCOME_TYPE: new FormControl(), // Income Category
+    NAME_EDUCATION_TYPE: new FormControl(), // Education level
+    NAME_FAMILY_STATUS: new FormControl(), // Marital status
+    NAME_HOUSING_TYPE: new FormControl(), // Way of living
+    DAYS_BIRTH: new FormControl(), // Birthday
+    DAYS_EMPLOYED: new FormControl(), // Start date
+    FLAG_MOBIL: new FormControl(), // Is there a mobile phone
     FLAG_WORK_PHONE: new FormControl(), // Work phone
-    FLAG_PHONE: new FormControl(), // Landline
-    FLAG_EMAIL: new FormControl(),
+    FLAG_PHONE: new FormControl(), // Is there a phone
+    FLAG_EMAIL: new FormControl(), // Is there an email
+    OCCUPATION_TYPE: new FormControl(), // Occupation
     CTM_FAM_MEMBERS: new FormControl(), // Family size
-    FLAG_OWN_REALITY: new FormControl(),
+    /**
+     * The month of the extracted data is the starting point, backwards,
+     * 0 is the current month,
+     * -1 is the previous month, and so on
+     */
+    MONTHS_BALANCE: new FormControl(), // record month
+    /**
+     * 0: 1-29 days past due
+     * 1: 30-59 days past due
+     * 2: 60-89 days past due
+     * 3: 90-119 days past due
+     * 4: 120-149 days past due
+     * 5: overdue or bad debts, white-offs for more than 150 days
+     * C: paid off that month
+     * X: No loan for the month
+     */
+    STATUS: new FormControl(), // Finantial status
     FLAG_BIRTH: new FormControl(),
-    DAYS_EMPLOYED: new FormControl(),
-    MONTH_BALANCE: new FormControl(),
-    AMT_INCOME_TOTAL: new FormControl(),
-    OCCUPATION_TYPE: new FormControl(),
   });
 
   finantialStatus: SelectOption[] = [
