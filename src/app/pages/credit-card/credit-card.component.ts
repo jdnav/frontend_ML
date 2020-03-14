@@ -98,7 +98,12 @@ export class CreditCardComponent implements OnInit {
     { value: 'With parent', viewValue: 'With parent' },
   ];
 
-  constructor() { }
+  // form group flag
+  formSubmitted: boolean;
+
+  constructor() {
+    this.formSubmitted = false;
+  }
 
   ngOnInit(): void {
   }
@@ -106,6 +111,9 @@ export class CreditCardComponent implements OnInit {
   onSubmit() {
     // TODO: Use EventEmitter with form value
     console.warn(this.creditCardForm.value);
+    // This flag will activate a new panel for results
+    this.formSubmitted = true;
+
   }
 
 }

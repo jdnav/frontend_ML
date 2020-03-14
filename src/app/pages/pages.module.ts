@@ -11,6 +11,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [ContactComponent, CreditCardComponent],
@@ -24,7 +26,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatGridListModule
+    MatGridListModule,
+    MatProgressBarModule,
+    MatIconModule
   ],
   providers: [
     MatDatepickerModule,

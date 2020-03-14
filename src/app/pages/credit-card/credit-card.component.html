@@ -10,7 +10,7 @@
 
     <form [formGroup]="creditCardForm" (ngSubmit)="onSubmit()">
 
-      <section class="example-section">
+      <section class="form-section">
         <!-- GENDER -->
         <section class="radio-section">
           <label class="radio-margin-label">Gender:</label>
@@ -23,18 +23,18 @@
         <!-- FLAG_OWN_CAR -->
         <section class="radio-section">
           <label class="radio-margin-label">Own car:</label>
-          <mat-radio-group formControlName="FLAG_OWN_CAR">
+          <mat-radio-group required formControlName="FLAG_OWN_CAR">
             <mat-radio-button class="radio-margin" value="yes">Yes</mat-radio-button>
             <mat-radio-button class="radio-margin" value="no">No</mat-radio-button>
           </mat-radio-group>
         </section>
       </section>
 
-      <section class="example-section">
+      <section class="form-section">
         <!-- FLAG_MOBIL -->
         <section class="radio-section">
           <label class="radio-margin-label">Own mobile phone:</label>
-          <mat-radio-group formControlName="FLAG_MOBIL">
+          <mat-radio-group required formControlName="FLAG_MOBIL">
             <mat-radio-button class="radio-margin" value="yes">Yes</mat-radio-button>
             <mat-radio-button class="radio-margin" value="no">No</mat-radio-button>
           </mat-radio-group>
@@ -43,18 +43,18 @@
         <!-- FLAG_WORK_PHONE -->
         <section class="radio-section">
           <label class="radio-margin-label">Work phone:</label>
-          <mat-radio-group formControlName="FLAG_WORK_PHONE">
+          <mat-radio-group required formControlName="FLAG_WORK_PHONE">
             <mat-radio-button class="radio-margin" value="yes">Yes</mat-radio-button>
             <mat-radio-button class="radio-margin" value="no">No</mat-radio-button>
           </mat-radio-group>
         </section>
       </section>
 
-      <section class="example-section">
+      <section class="form-section">
         <!-- FLAG_PHONE -->
         <section class="radio-section">
           <label class="radio-margin-label">Landline phone:</label>
-          <mat-radio-group formControlName="FLAG_PHONE">
+          <mat-radio-group required formControlName="FLAG_PHONE">
             <mat-radio-button class="radio-margin" value="yes">Yes</mat-radio-button>
             <mat-radio-button class="radio-margin" value="no">No</mat-radio-button>
           </mat-radio-group>
@@ -63,14 +63,14 @@
         <!-- FLAG_EMAIL -->
         <section class="radio-section">
           <label class="radio-margin-label">Email:</label>
-          <mat-radio-group formControlName="FLAG_EMAIL">
+          <mat-radio-group required formControlName="FLAG_EMAIL">
             <mat-radio-button class="radio-margin" value="yes">Yes</mat-radio-button>
             <mat-radio-button class="radio-margin" value="no">No</mat-radio-button>
           </mat-radio-group>
         </section>
       </section>
 
-      <section class="example-section">
+      <section class="form-section">
         <!-- STATUS -->
         <mat-form-field>
           <mat-label>Finantial status</mat-label>
@@ -112,40 +112,59 @@
         </mat-form-field>
       </section>
 
+      <section class="form-section">
+        <!-- NAME_HOUSING_TYPE -->
+        <mat-form-field>
+          <mat-label>House type</mat-label>
+          <mat-select required formControlName="NAME_HOUSING_TYPE">
+            <mat-option *ngFor="let house of houseTypes" [value]="house.value">
+              {{house.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
 
-      <!-- NAME_HOUSING_TYPE -->
-      <mat-form-field>
-        <mat-label>House type</mat-label>
-        <mat-select required formControlName="NAME_HOUSING_TYPE">
-          <mat-option *ngFor="let house of houseTypes" [value]="house.value">
-            {{house.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+        <!-- FLAG_BIRTH -->
+        <mat-form-field>
+          <mat-label>Birthday</mat-label>
+          <input matInput [matDatepicker]="picker" required formControlName="DAYS_BIRTH">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
 
-      <!-- FLAG_BIRTH -->
-      <mat-form-field>
-        <mat-label>Birthday</mat-label>
-        <input matInput [matDatepicker]="picker" required formControlName="DAYS_BIRTH">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-
-      <!-- AMT_INCOME_TOTAL -->
-      <mat-form-field class="example-form-field">
-        <mat-label>Total amount Income</mat-label>
-        <input matInput type="number" required formControlName="AMT_INCOME_TOTAL">
-        <span matPrefix>$&nbsp;</span>
-        <span matSuffix>.00</span>
-      </mat-form-field>
+        <!-- AMT_INCOME_TOTAL -->
+        <mat-form-field class="example-form-field">
+          <mat-label>Total amount Income</mat-label>
+          <input matInput type="number" required formControlName="AMT_INCOME_TOTAL">
+          <span matPrefix>$&nbsp;</span>
+          <span matSuffix>.00</span>
+        </mat-form-field>
+      </section>
 
       <!-- SUBMIT BUTTON -->
-      <section class="example-section">
+      <section class="form-section">
         <button mat-raised-button color="primary" type="submit" [disabled]="!creditCardForm.valid">Submit</button>
       </section>
 
     </form>
   </mat-card-content>
   <mat-card-actions>
+
+    <div *ngIf="creditCardForm.valid && this.formSubmitted">
+      <h2 class="example-h2">Working on it...</h2>
+
+      <section class="loading-section">
+        <mat-progress-bar class="loading-margin" primary mode="indeterminate">
+        </mat-progress-bar>
+      </section>
+
+      <section class="loading-section">
+        Result: APPROVED <mat-icon style="margin-left: 10px;">thumb_up</mat-icon>
+      </section>
+
+      <section class="loading-section">
+        Result: DENIED <mat-icon style="margin-left: 10px;">thumb_down</mat-icon>
+      </section>
+    </div>
+
   </mat-card-actions>
 </mat-card>

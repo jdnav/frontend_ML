@@ -22,6 +22,7 @@ td {
 }
 
 mat-form-field {
+  width: 100%;
   margin-right: 12px;
 }
 
@@ -45,9 +46,24 @@ mat-card-content {
   width: 130px;
 }
 
-.example-section {
+.form-section {
   display: flex;
   align-content: center;
   align-items: center;
 }
 
+.example-h2 {
+  margin: 10px;
+}
+
+.loading-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+  margin: 0 5%;
+}
+
+.loading-margin {
+  margin: 0 10px;
+}
