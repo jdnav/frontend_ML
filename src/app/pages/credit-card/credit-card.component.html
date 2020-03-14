@@ -8,70 +8,115 @@
 
     <P>Here we could explain how the algorithm works...</P>
 
-    <form [formGroup]="creditCardForm">
+    <form [formGroup]="creditCardForm" (ngSubmit)="onSubmit()">
 
-      <section class="radio-section">
-        <label class="radio-margin">Gender:</label>
-        <mat-radio-group>
-          <mat-radio-button checked class="radio-margin" value="male">Male</mat-radio-button>
-          <mat-radio-button class="radio-margin" value="female">Female</mat-radio-button>
-        </mat-radio-group>
+      <section class="example-section">
+        <!-- GENDER -->
+        <section class="radio-section">
+          <label class="radio-margin-label">Gender:</label>
+          <mat-radio-group required formControlName="CODE_GENDER">
+            <mat-radio-button checked class="radio-margin" value="male">Male</mat-radio-button>
+            <mat-radio-button class="radio-margin" value="female">Female</mat-radio-button>
+          </mat-radio-group>
+        </section>
+
+        <!-- FLAG_OWN_CAR -->
+        <section class="radio-section">
+          <label class="radio-margin-label">Own car:</label>
+          <mat-radio-group formControlName="FLAG_OWN_CAR">
+            <mat-radio-button class="radio-margin" value="yes">Yes</mat-radio-button>
+            <mat-radio-button class="radio-margin" value="no">No</mat-radio-button>
+          </mat-radio-group>
+        </section>
       </section>
 
-      <!-- STATUS -->
-      <mat-form-field>
-        <mat-label>Finantial status</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let status of finantialStatus" [value]="status.value">
-            {{status.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <section class="example-section">
+        <!-- FLAG_MOBIL -->
+        <section class="radio-section">
+          <label class="radio-margin-label">Own mobile phone:</label>
+          <mat-radio-group formControlName="FLAG_MOBIL">
+            <mat-radio-button class="radio-margin" value="yes">Yes</mat-radio-button>
+            <mat-radio-button class="radio-margin" value="no">No</mat-radio-button>
+          </mat-radio-group>
+        </section>
 
-      <!-- NAME_EDUCATION_TYPE -->
-      <mat-form-field>
-        <mat-label>Type of education</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let education of educationTypes" [value]="education.value">
-            {{education.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+        <!-- FLAG_WORK_PHONE -->
+        <section class="radio-section">
+          <label class="radio-margin-label">Work phone:</label>
+          <mat-radio-group formControlName="FLAG_WORK_PHONE">
+            <mat-radio-button class="radio-margin" value="yes">Yes</mat-radio-button>
+            <mat-radio-button class="radio-margin" value="no">No</mat-radio-button>
+          </mat-radio-group>
+        </section>
+      </section>
 
-      <!-- NAME_INCOME_TYPE -->
-      <mat-form-field>
-        <mat-label>Type of income</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let income of incomeTypes" [value]="income.value">
-            {{income.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <section class="example-section">
+        <!-- FLAG_PHONE -->
+        <section class="radio-section">
+          <label class="radio-margin-label">Landline phone:</label>
+          <mat-radio-group formControlName="FLAG_PHONE">
+            <mat-radio-button class="radio-margin" value="yes">Yes</mat-radio-button>
+            <mat-radio-button class="radio-margin" value="no">No</mat-radio-button>
+          </mat-radio-group>
+        </section>
 
-      <!-- CODE_GENDER -->
-      <mat-form-field>
-        <mat-label>Gender</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let gender of genderTypes" [value]="gender.value">
-            {{gender.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+        <!-- FLAG_EMAIL -->
+        <section class="radio-section">
+          <label class="radio-margin-label">Email:</label>
+          <mat-radio-group formControlName="FLAG_EMAIL">
+            <mat-radio-button class="radio-margin" value="yes">Yes</mat-radio-button>
+            <mat-radio-button class="radio-margin" value="no">No</mat-radio-button>
+          </mat-radio-group>
+        </section>
+      </section>
 
-      <!-- CODE_GENDER -->
-      <mat-form-field>
-        <mat-label>Family type</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let familyStatus of familyStatusTypes" [value]="familyStatus.value">
-            {{familyStatus.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <section class="example-section">
+        <!-- STATUS -->
+        <mat-form-field>
+          <mat-label>Finantial status</mat-label>
+          <mat-select required formControlName="STATUS">
+            <mat-option *ngFor="let status of finantialStatus" [value]="status.value">
+              {{status.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- NAME_EDUCATION_TYPE -->
+        <mat-form-field>
+          <mat-label>Type of education</mat-label>
+          <mat-select required formControlName="NAME_EDUCATION_TYPE">
+            <mat-option *ngFor="let education of educationTypes" [value]="education.value">
+              {{education.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- NAME_INCOME_TYPE -->
+        <mat-form-field>
+          <mat-label>Type of income</mat-label>
+          <mat-select required formControlName="NAME_INCOME_TYPE">
+            <mat-option *ngFor="let income of incomeTypes" [value]="income.value">
+              {{income.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <!-- FAMILY_TIPE -->
+        <mat-form-field>
+          <mat-label>Family type</mat-label>
+          <mat-select required formControlName="NAME_FAMILY_STATUS">
+            <mat-option *ngFor="let familyStatus of familyStatusTypes" [value]="familyStatus.value">
+              {{familyStatus.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </section>
+
 
       <!-- NAME_HOUSING_TYPE -->
       <mat-form-field>
         <mat-label>House type</mat-label>
-        <mat-select>
+        <mat-select required formControlName="NAME_HOUSING_TYPE">
           <mat-option *ngFor="let house of houseTypes" [value]="house.value">
             {{house.viewValue}}
           </mat-option>
@@ -80,68 +125,27 @@
 
       <!-- FLAG_BIRTH -->
       <mat-form-field>
-        <mat-label>Choose a date</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <mat-label>Birthday</mat-label>
+        <input matInput [matDatepicker]="picker" required formControlName="DAYS_BIRTH">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
-      <!-- FLAG_OWN_CAR -->
-      <section class="radio-section">
-        <label class="radio-margin">Own car:</label>
-        <mat-radio-group>
-          <mat-radio-button class="radio-margin" value="male">Yes</mat-radio-button>
-          <mat-radio-button class="radio-margin" value="female">No</mat-radio-button>
-        </mat-radio-group>
-      </section>
-
-      <!-- FLAG_MOBIL -->
-      <section class="radio-section">
-        <label class="radio-margin">Own mobile phone:</label>
-        <mat-radio-group>
-          <mat-radio-button class="radio-margin" value="male">Yes</mat-radio-button>
-          <mat-radio-button class="radio-margin" value="female">No</mat-radio-button>
-        </mat-radio-group>
-      </section>
-
-      <!-- FLAG_WORK_PHONE -->
-      <section class="radio-section">
-        <label class="radio-margin">Work phone:</label>
-        <mat-radio-group>
-          <mat-radio-button class="radio-margin" value="male">Yes</mat-radio-button>
-          <mat-radio-button class="radio-margin" value="female">No</mat-radio-button>
-        </mat-radio-group>
-      </section>
-
-      <!-- FLAG_PHONE -->
-      <section class="radio-section">
-        <label class="radio-margin">Landline phone:</label>
-        <mat-radio-group>
-          <mat-radio-button class="radio-margin" value="male">Yes</mat-radio-button>
-          <mat-radio-button class="radio-margin" value="female">No</mat-radio-button>
-        </mat-radio-group>
-      </section>
-
-      <!-- FLAG_EMAIL -->
-      <section class="radio-section">
-        <label class="radio-margin">Email:</label>
-        <mat-radio-group>
-          <mat-radio-button class="radio-margin" value="male">Yes</mat-radio-button>
-          <mat-radio-button class="radio-margin" value="female">No</mat-radio-button>
-        </mat-radio-group>
-      </section>
-
       <!-- AMT_INCOME_TOTAL -->
       <mat-form-field class="example-form-field">
         <mat-label>Total amount Income</mat-label>
-        <input matInput type="number">
+        <input matInput type="number" required formControlName="AMT_INCOME_TOTAL">
         <span matPrefix>$&nbsp;</span>
         <span matSuffix>.00</span>
       </mat-form-field>
 
+      <!-- SUBMIT BUTTON -->
+      <section class="example-section">
+        <button mat-raised-button color="primary" type="submit" [disabled]="!creditCardForm.valid">Submit</button>
+      </section>
+
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="primary">Submit</button>
   </mat-card-actions>
 </mat-card>

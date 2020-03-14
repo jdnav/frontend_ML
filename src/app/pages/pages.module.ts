@@ -9,7 +9,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [ContactComponent, CreditCardComponent],
@@ -21,7 +22,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatCardModule,
     MatButtonModule,
     MatRadioModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatGridListModule
+  ],
+  providers: [
+    MatDatepickerModule,
   ],
   exports: [ContactComponent, CreditCardComponent]
 })

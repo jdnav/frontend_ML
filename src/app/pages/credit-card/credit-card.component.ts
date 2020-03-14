@@ -103,4 +103,9 @@ export class CreditCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    // TODO: Use EventEmitter with form value
+    console.warn(this.creditCardForm.value);
+  }
+
 }
