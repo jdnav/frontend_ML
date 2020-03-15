@@ -142,14 +142,14 @@
 
       <!-- SUBMIT BUTTON -->
       <section class="form-section">
-        <button mat-raised-button color="primary" type="submit" [disabled]="!creditCardForm.valid">Submit</button>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
       </section>
 
     </form>
   </mat-card-content>
   <mat-card-actions>
 
-    <div *ngIf="creditCardForm.valid && this.formSubmitted">
+    <div>
       <h2 class="example-h2">Working on it...</h2>
 
       <section class="loading-section">
