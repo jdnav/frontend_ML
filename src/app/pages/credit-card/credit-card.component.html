@@ -142,15 +142,15 @@
 
       <!-- SUBMIT BUTTON -->
       <section class="form-section">
-        <button mat-raised-button color="primary" type="submit">Submit</button>
+        <button mat-raised-button color="primary" type="submit" disabled="creditCardForm.valid">Submit</button>
       </section>
 
     </form>
   </mat-card-content>
   <mat-card-actions>
 
-    <div>
-      <h2 class="example-h2">Working on it...</h2>
+    <div *ngIf="formSubmitted">
+      <h2 style="margin: 12px">Working on it...</h2>
 
       <section class="loading-section">
         <mat-progress-bar class="loading-margin" primary mode="indeterminate">
