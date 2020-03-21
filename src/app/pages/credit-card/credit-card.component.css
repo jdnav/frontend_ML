@@ -1,0 +1,42 @@
+mat-form-field {
+  width: 100%;
+  margin-right: 12px;
+}
+
+mat-card-content {
+  margin: 0 5%;
+}
+
+.radio-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+  width: 50%;
+}
+
+.radio-margin {
+  margin: 0 10px;
+}
+
+.radio-margin-label {
+  width: 130px;
+}
+
+.form-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.loading-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+  margin: 0 5%;
+}
+
+.loading-margin {
+  margin: 0 10px;
+}
